@@ -34,17 +34,17 @@ function Initialize-DevEnv {
     }
     if ($vscode_installed -ne "True") { 
          Write-Host "⚡ Invoking Helper-Script" -ForegroundColor Yellow
-        . Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/CrazyWolf13/home-configs/main/pwsh_helper.ps1" -UseBasicParsing).Content
+        . Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MrOlof/PSProfile/main/pwsh/pwsh_helper.ps1" -UseBasicParsing).Content
         Test-vscode 
     }
     if ($ohmyposh_installed -ne "True") { 
         Write-Host "⚡ Invoking Helper-Script" -ForegroundColor Yellow
-        . Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/CrazyWolf13/home-configs/main/pwsh_helper.ps1" -UseBasicParsing).Content
+        . Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MrOlof/PSProfile/main/pwsh/pwsh_helper.ps1" -UseBasicParsing).Content
         Test-ohmyposh 
         }
     if ($FiraCode_installed -ne "True") {
         Write-Host "⚡ Invoking Helper-Script" -ForegroundColor Yellow
-        . Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/CrazyWolf13/home-configs/main/pwsh_helper.ps1" -UseBasicParsing).Content
+        . Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MrOlof/PSProfile/main/pwsh/pwsh_helper.ps1" -UseBasicParsing).Content
         Test-firacode 
         }
     
