@@ -4,7 +4,7 @@ Write-Host ""
 
 # TEMP:
 #Update all my Configs to the new subfolder:
-Set-Content -Path $PROFILE -Value 'iex (iwr "https://raw.githubusercontent.com/CrazyWolf13/home-configs/main/pwsh/Microsoft.PowerShell_profile.ps1").Content'
+Set-Content -Path $PROFILE -Value 'iex (iwr "https://raw.githubusercontent.com/MrOlof/PSProfile/main/pwsh/pwsh_helper.ps1").Content'
 
 #All Colors: Black, Blue, Cyan, DarkBlue, DarkCyan, DarkGray, DarkGreen, DarkMagenta, DarkRed, DarkYellow, Gray, Green, Magenta, Red, White, Yellow.
 
@@ -451,4 +451,4 @@ if (-not (Test-Path -Path $PROFILE)) {
     Write-Host "PowerShell profile created at $PROFILE." -ForegroundColor Yellow
 }
 # Inject OhMyPosh
-oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/CrazyWolf13/home-configs/main/montys.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/MrOlof/PSProfile/main/posh.ps1' | Invoke-Expression
