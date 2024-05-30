@@ -1,9 +1,9 @@
 # Check Internet and exit if it takes longer than 1 second
 $canConnectToGitHub = Test-Connection github.com -Count 1 -Quiet -TimeoutSeconds 1
 $configPath = "$HOME\pwsh_custom_config.yml"
-$githubUser = "CrazyWolf13"
-$name= "Tobias"
-$OhMyPoshConfig = "https://raw.githubusercontent.com/$githubUser/home-configs/main/pwsh/montys.omp.json"
+$githubUser = "MrOlof"
+$name= "Kosta"
+$OhMyPoshConfig = "https://raw.githubusercontent.com/$githubUser/PSProfile/main/pwsh/montys.omp.json"
 
 function Initialize-DevEnv {
     if (-not $global:canConnectToGitHub) {
