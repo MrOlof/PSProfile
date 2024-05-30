@@ -4,12 +4,12 @@ Write-Host ""
 
 # TEMP:
 #Update all my Configs to the new subfolder:
-Set-Content -Path $PROFILE -Value 'iex (iwr "https://raw.githubusercontent.com/MrOlof/PSProfile/main/Profile.ps1").Content'
+Set-Content -Path $PROFILE -Value 'iex (iwr "https://raw.githubusercontent.com/CrazyWolf13/home-configs/main/pwsh/Microsoft.PowerShell_profile.ps1").Content'
 
 #All Colors: Black, Blue, Cyan, DarkBlue, DarkCyan, DarkGray, DarkGreen, DarkMagenta, DarkRed, DarkYellow, Gray, Green, Magenta, Red, White, Yellow.
 
 # Check Internet and exit if it takes longer than 1 second
-$canConnectToGitHub = Test-Connection github.com -Count 1 -Quiet -TimeoutSeconds 1
+$canConnectToGitHub = Test-Connection github.com -Count 1 -Quiet
 $configPath = "$HOME\pwsh_custom_config.yml"
 
 function Initialize-DevEnv {
@@ -437,7 +437,7 @@ Install-Config
 # Update PowerShell in the background
 Start-Job -ScriptBlock {
     Write-Host "⚡ Invoking Helper-Script" -ForegroundColor Yellow
-    . Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/CrazyWolf13/home-configs/main/pwsh_helper.ps1" -UseBasicParsing).Content
+    . Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MrOlof/PSProfile/main/pwsh/pwsh_helper.ps1" -UseBasicParsing).Content
     Update-PowerShell 
 } > $null 2>&1
 # Try to import MS PowerToys WinGetCommandNotFound
@@ -447,7 +447,7 @@ if (-not $?) { Write-Host "💭 Make sure to install WingetCommandNotFound by MS
 # Create profile if not exists
 if (-not (Test-Path -Path $PROFILE)) {
     New-Item -ItemType File -Path $PROFILE | Out-Null
-    Add-Content -Path $PROFILE -Value 'iex (iwr "https://raw.githubusercontent.com/CrazyWolf13/home-configs/main/Microsoft.PowerShell_profile.ps1").Content'
+    Add-Content -Path $PROFILE -Value 'iex (iwr "https://raw.githubusercontent.com/MrOlof/PSProfile/main/Profile.ps1").Content'
     Write-Host "PowerShell profile created at $PROFILE." -ForegroundColor Yellow
 }
 # Inject OhMyPosh
